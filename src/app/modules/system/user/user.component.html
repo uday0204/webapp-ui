@@ -1,0 +1,48 @@
+<form nz-form >
+    <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>User Id</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidatingTip="Validating...">
+          <input nz-input formControlName="userId" placeholder="userId" />
+        </nz-form-control>
+      </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>User Name</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzValidatingTip="Validating...">
+        <input nz-input formControlName="userName" placeholder="username" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>First Name</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidatingTip="Validating...">
+          <input nz-input formControlName="firstName" placeholder="First Name" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Last Name</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidatingTip="Validating...">
+          <input nz-input formControlName="lastName" placeholder="Last Name" />
+        </nz-form-control>
+      </nz-form-item>
+   
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+      <nz-form-control [nzSpan]="12">
+        <input nz-input formControlName="email" placeholder="email" type="email" />
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="7" nzRequired>Role</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <input nz-input formControlName="mobile" placeholder="role" />
+        </nz-form-control>
+      </nz-form-item>
+    
+    <nz-form-item>
+      <nz-form-control [nzOffset]="7" [nzSpan]="12">
+        <button nz-button nzType="primary">Submit</button>
+        <!-- <button nz-button (click)="resetForm()">Cancel</button> -->
+      </nz-form-control>
+    </nz-form-item>
+  </form>

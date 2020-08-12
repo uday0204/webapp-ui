@@ -1,0 +1,61 @@
+<div class="details-tab">
+  <div class="row clearfix">
+    <div class="col-md-4 px-0">
+      <nz-form-item>
+        <nz-form-label>
+          Show Name
+        </nz-form-label>
+        <nz-form-control>
+          <input nz-input [value]="showName" readonly class="read-only" />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+    <div *ngIf="shotIn" class="col-md-4 px-0">
+      <nz-form-item>
+        <nz-form-label>
+          Shot Code
+        </nz-form-label>
+        <nz-form-control>
+          <input
+            nz-input
+            [value]="shotIn.shotCode ? shotIn.shotCode : ''"
+            readonly
+            class="read-only"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div *ngIf="assetIn" class="col-md-4 px-0">
+      <nz-form-item>
+        <nz-form-label>
+          Asset Name
+        </nz-form-label>
+        <nz-form-control>
+          <input
+            nz-input
+            [value]="assetIn.assetName ? assetIn.assetName : ''"
+            readonly
+            class="read-only"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+
+    <div class="col-md-4 px-0">
+      <nz-form-item>
+        <nz-form-label>
+          Task Name
+        </nz-form-label>
+        <nz-form-control>
+          <input
+            nz-input
+            [value]="taskIn.taskName"
+            readonly
+            class="read-only"
+          />
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="row login-div">
+  <div class="login-Panel" [ngStyle]="{ 'height.px': loginPanelheight }" (window:resize)="onResize()">
+    <div class="row top-login">
+      <div class="col logo-text">MDM</div>
+      <div class="col">
+        <span class="float-right version-text">Version 1.0.0</span>
+      </div>
+      <nz-divider></nz-divider>
+    </div>
+    <div class="middle-login">
+      <router-outlet></router-outlet>
+    </div>
+     
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div *ngIf="progressEntities" class="task-div static-bg">
+    <div class="page-title-second-level">
+        <h3>{{progressEntities.title}}</h3>
+    </div>
+    <div class="graph-parent">
+        <div *ngFor="let item of progressEntities.items; last as isLast" class="graph-div" [class.add-border]="!isLast">
+            <div [style.color]="getTextColor(item)" class="graph-title">{{getTitle(item)}}</div>
+            <div class="graph">
+                <div class="d-flex flex-row justify-content-center">
+                    <app-progress [config]="getProgressConfig(item)" [percentage]="getPercent(item)"></app-progress>
+                </div>
+            </div>
+            <div class="graph-value">{{getValue(item) | number}}</div>
+        </div>
+        <!-- <div class="graph-div offline">
+            <div class="graph-title">offline</div>
+            <div class="graph">def</div>
+            <div class="graph-value">99,999</div>
+        </div>
+        <div class="graph-div on-hold">
+            <div class="graph-title">On Hold</div>
+            <div class="graph">def</div>
+            <div class="graph-value">99,999</div>
+        </div>
+        <div class="graph-div in-progress">
+            <div class="graph-title">In progress</div>
+            <div class="graph">def</div>
+            <div class="graph-value">99,999</div>
+        </div>
+        <div class="graph-div need-assistance">
+            <div class="graph-title">Need Assistance</div>
+            <div class="graph">def</div>
+            <div class="graph-value">99,999</div>
+        </div>
+        <div class="graph-div completed">
+            <div class="graph-title">Completed</div>
+            <div class="graph">def</div>
+            <div class="graph-value">99,999</div>
+        </div> -->
+    </div>
+</div>

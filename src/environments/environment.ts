@@ -2,9 +2,18 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: "http://139.59.62.225:8080/portal/api/",
+  //apiUrl: "http://192.168.1.10:8081/portal/api/",
+  //apiUrl: "http://192.168.0.44:8080/portal/api/",
+  //apiUrl: "http://192.168.0.177:8080/portal/api/",
+  version: "1.0.0",
+  apiUrlLocal: "http://localhost:2000/mock-",
+  isLocal: true,
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

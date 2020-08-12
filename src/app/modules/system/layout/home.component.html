@@ -1,0 +1,99 @@
+<nz-layout class="app-layout">
+
+    <nz-sider nzCollapsible nzBreakpoint="lg" nzWidth="200px">
+      <div class="sidebar-logo">
+        <a href="https://ng.ant.design/" target="_blank">
+          <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+          <h1>MDM</h1>
+        </a>
+      </div>
+     
+      <ul class="menu-list" nz-menu nzTheme="dark" nzMode="inline" >
+       
+        <li nz-menu-item nzMatchRouter>
+          <i nz-icon nzType="user"></i>
+          <span><a routerLink="/dashboard">Dashboard</a></span>
+        </li>
+
+        <li nz-menu-item nzMatchRouter>
+          <i nz-icon nzType="team"></i>
+          <span><a routerLink="/clients">Clients</a></span>
+        </li>
+
+        <li nz-menu-item nzMatchRouter>
+          <i nz-icon nzType="file"></i>
+          <span><a routerLink="/products">Products</a></span>
+        </li>
+
+        <li nz-menu-item nzMatchRouter>
+          <i nz-icon nzType="file"></i>
+          <span><a routerLink="/schema">Masters</a></span>
+        </li>
+
+        <li nz-menu-item nzMatchRouter>
+          <i nz-icon nzType="file"></i>
+          <span><a routerLink="/schema">Configurations</a></span>
+        </li>
+
+        <li nz-menu-item nzMatchRouter>
+          <i nz-icon nzType="file"></i>
+          <span><a routerLink="/schema">Masters Data</a></span>
+        </li>
+
+       </ul>
+      
+    </nz-sider>
+    
+    <nz-layout>
+      <nz-header>
+       
+      
+  
+        <div class="app-header-right-icons float-right">
+          <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
+            
+            <li title="Profile">
+              <button
+                nzTrigger="click"
+                class="btn-more"
+                nz-button
+                nz-dropdown
+                [nzDropdownMenu]="menu1"
+                nzPlacement="bottomRight"
+                style="height:70px"
+              >
+                <app-avatar [info]="getAvatarInfo()"> </app-avatar>
+              </button>
+            </li>
+          </ul>
+        </div>  
+        <div class="app-header-username float-right">
+          <span>Udaya kumar</span>
+        </div>
+      </nz-header>
+      <nz-content>
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+          <nz-breadcrumb-item>Clients</nz-breadcrumb-item>
+        </nz-breadcrumb>
+
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div> 
+      </nz-content>
+      <nz-footer>Copy Rights ©2020 version 1.0.0</nz-footer>
+    </nz-layout>
+  </nz-layout>
+  <nz-dropdown-menu #menu1="nzDropdownMenu">
+    <ul nz-menu class="profile-menu">
+      <li nz-menu-item (click)="useredit()" >
+        <app-icon-picker nz-icon iconType="account"></app-icon-picker>
+        Account Settings
+      </li>
+     
+      <li nz-menu-item (click)="logoutHandler()">
+        <app-icon-picker nz-icon iconType="logout"></app-icon-picker>
+        Sign Out
+      </li>
+    </ul>
+  </nz-dropdown-menu>

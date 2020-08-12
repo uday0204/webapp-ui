@@ -25,9 +25,16 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
+              "src/theme.less",
               "src/styles.scss"
             ],
             "scripts": []
@@ -51,7 +58,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
+                  "maximumWarning": "4mb",
                   "maximumError": "5mb"
                 },
                 {
@@ -92,6 +99,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -121,8 +129,16 @@
               "devServerTarget": "webapp-ui:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "webapp-ui"
+    }
+  },
+  "defaultProject": "webapp-ui",
+  "cli": {
+    "analytics": "5f5c4639-b3b6-4920-b445-540b9749ddc3"
+  }
 }

@@ -1,0 +1,21 @@
+   <nz-table
+   #basicTable [nzData]="listOfData"
+>
+  <thead>
+    <tr>
+      <th nzColumnKey="name" [nzSortFn]="true">Client Id</th>
+      <th nzColumnKey="gender" [nzSortFn]="true"  >Client Name</th>
+      <th nzColumnKey="email" [nzSortFn]="true">Client Type</th>
+      <th nzColumnKey="address" [nzSortFn]="true">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.name }}</td>
+      <td>{{ data.gender }}</td>
+      <td>{{ data.email }}</td>
+      <td>{{ data.address }}</td>
+    </tr>
+  </tbody>
+   
+</nz-table>

@@ -1,0 +1,41 @@
+<div class="row  page-title">
+  <h2 class="col">User Login</h2>
+</div>
+<div class="row login-form">
+  <router-outlet></router-outlet>
+  <div class="col">
+
+    <form nz-form [formGroup]="loginForm" class="" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group>
+            <input type="text" nz-input formControlName="userName" placeholder="Username" #username />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your password!">
+          <nz-input-group [nzSuffix]="suffixTemplate">
+            <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="password"
+              placeholder="Password" />
+          </nz-input-group>
+          <ng-template #suffixTemplate>
+            <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+              (click)="passwordVisible = !passwordVisible"></i>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          
+          <button nz-button [nzType]="'primary'" [nzSize]="'small'">
+            Sign-in
+          </button>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="alert alert-danger" role="alert" *ngIf="loginForm.errors">
+        {{ loginErrMsg }}
+      </div>
+    </form>
+  </div>
+</div>

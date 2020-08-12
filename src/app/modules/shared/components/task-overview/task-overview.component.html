@@ -1,0 +1,47 @@
+<div *ngIf="isDataReady" class="row breadcrumb-title">
+  <span>
+    <span class="link" (click)="linkClickHandler('show-listing')">
+      Show Listing
+    </span>
+    <span class="curr"> / </span>
+    <ng-container *ngIf="shotIn">
+      <span class="link" (click)="linkClickHandler('shot-listing')">
+        {{ shotIn?.showName }}
+      </span>
+      <span class="curr"> / </span>
+      <span class="link" (click)="linkClickHandler('task-listing')">{{
+        shotIn?.shotCode
+      }}</span>
+    </ng-container>
+    <ng-container *ngIf="assetIn">
+      <span class="link" (click)="linkClickHandler('shot-listing')">
+        {{ assetIn?.showName }}
+      </span>
+      <span class="curr"> / </span>
+      <span class="link" (click)="linkClickHandler('task-listing')">
+        {{ assetIn?.assetName }}</span
+      >
+    </ng-container>
+    <span class="curr"> / {{ taskIn?.taskName }}</span>
+  </span>
+</div>
+
+<div class="show-detail-component">
+  <nz-tabset *ngIf="isDataReady" [nzSelectedIndex]="0">
+    <nz-tab nzTitle="Details">
+      <ng-template nz-tab>
+        <app-task-detail-tab
+          [taskIn]="taskIn"
+          [shotIn]="shotIn"
+          [assetIn]="assetIn"
+          [showName]="showName"
+        ></app-task-detail-tab>
+      </ng-template>
+    </nz-tab>
+    <nz-tab nzTitle="Versions">
+      <ng-template nz-tab>
+        <app-versionlist-tab [taskIn]="taskIn"></app-versionlist-tab>
+      </ng-template>
+    </nz-tab>
+  </nz-tabset>
+</div>
